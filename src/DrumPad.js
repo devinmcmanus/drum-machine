@@ -6,10 +6,12 @@ class DrumPad extends React.Component {
         super(props);
 
         this.audioSrc = `https://cdn.freecodecamp.org/testable-projects-fcc/audio/${this.props.sample}.mp3`;
+
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    playClip(props) {
-        const audioClip = document.getElementById(props.keyBind);
+    handleClick() {
+        const audioClip = document.getElementById(this.props.keyBind);
         audioClip.play();
     }
 
@@ -20,7 +22,7 @@ class DrumPad extends React.Component {
                     id={this.props.sample} 
                     type='button' 
                     className='btn btn-secondary drum-pad'
-                    onClick={() => this.playClip(this.props)}
+                    onClick={this.handleClick}
                 >
                     {this.props.keyBind}
                     <audio 
