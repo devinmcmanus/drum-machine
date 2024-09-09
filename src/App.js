@@ -1,5 +1,6 @@
 import React from 'react';
 import DrumPad from './DrumPad';
+import Display from './Display';
 import './App.css';
 
 class App extends React.Component {
@@ -32,7 +33,7 @@ class App extends React.Component {
       <div id='drum-machine' className='container'>
         <div className='row'>
           <div className='col'>
-            <div id='display' />
+            <Display />
           </div>
         </div>
         <div className='row'>
