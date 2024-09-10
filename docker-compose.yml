@@ -3,7 +3,4 @@ services:
   drum-machine:
     build: .
     ports:
-      - "3000:3000"
-    volumes:
-      - .:/public
-    command: npm start
+      - "80:80"
