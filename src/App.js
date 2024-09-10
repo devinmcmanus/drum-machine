@@ -7,6 +7,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      nowPlaying: ''
+    }
+
     this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
@@ -24,7 +28,10 @@ class App extends React.Component {
     const keysToHandle = 'QWEASDZXC';
     
     if (keysToHandle.includes(keyUpper)) {
-      document.getElementById(keyUpper).click();
+      document.getElementById(keyUpper).play();
+      this.setState({
+        nowPlaying: keyUpper
+      });
     }
   }
 
@@ -33,7 +40,7 @@ class App extends React.Component {
       <div id='drum-machine' className='container'>
         <div className='row'>
           <div className='col'>
-            <Display />
+            <Display nowPlaying={this.state.nowPlaying} />
           </div>
         </div>
         <div className='row'>
