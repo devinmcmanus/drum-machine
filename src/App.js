@@ -82,7 +82,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='drum-machine' className='container'>
+      <div id='drum-machine' className='container app'>
         <div className='row'>
           <div className='col'>
             &nbsp;
