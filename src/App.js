@@ -2,6 +2,47 @@ import React from 'react';
 import DrumPad from './DrumPad';
 import Display from './Display';
 import './App.css';
+import { keyboard } from '@testing-library/user-event/dist/keyboard';
+
+const drumMap = [
+  { 
+    sample: 'Heater-1',
+    keyBind: 'Q'
+  },
+  {
+    sample: 'Heater-2',
+    keyBind: 'W'
+  },
+  {
+    sample: 'Heater-3',
+    keyBind: 'E'
+  },
+  {
+    sample: 'Heater-4_1',
+    keyBind: 'A'
+  },
+  {
+    sample: 'Heater-6',
+    keyBind: 'S'
+  },
+  {
+    sample: 'Dsc_Oh',
+    keyBind: 'D'
+  },
+  {
+    sample: 'Kick_n_Hat',
+    keyBind: 'Z'
+  },
+  {
+    sample: 'RP4_KICK_1',
+    keyBind: 'X'
+  },
+  {
+    sample: 'Cev_H2',
+    keyBind: 'C'
+  }
+];
+
 
 class App extends React.Component {
   constructor(props) {
@@ -28,9 +69,10 @@ class App extends React.Component {
     const keysToHandle = 'QWEASDZXC';
     
     if (keysToHandle.includes(keyUpper)) {
-      document.getElementById(keyUpper).play();
+      const target = drumMap.find(({ keyBind }) => keyBind === keyUpper);
+      document.getElementById(target.keyBind).play();
       this.setState({
-        nowPlaying: keyUpper
+        nowPlaying: target.sample
       });
     }
   }
