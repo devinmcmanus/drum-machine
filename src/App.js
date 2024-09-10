@@ -48,7 +48,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      nowPlaying: ''
+      nowPlaying: '-'
     }
 
     this.handleKeyPress = this.handleKeyPress.bind(this);
@@ -85,7 +85,17 @@ class App extends React.Component {
       <div id='drum-machine' className='container'>
         <div className='row'>
           <div className='col'>
+            &nbsp;
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col'>
             <Display nowPlaying={this.state.nowPlaying} />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col'>
+            &nbsp;
           </div>
         </div>
         <div className='row'>
