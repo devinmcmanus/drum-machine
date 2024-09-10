@@ -5,7 +5,7 @@ class Display extends React.Component {
     render() {
         return (
             <div id='display'>
-                <input type='text' className='form-control' disabled='disabled' value={this.props.nowPlaying} />
+                {this.props.nowPlaying}
             </div>
         );
     }
