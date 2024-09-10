@@ -63,6 +63,13 @@ class App extends React.Component {
     document.removeEventListener("keydown", this.handleKeyPress);
   }
 
+  playSample(drumSample) {
+    document.getElementById(drumSample.keyBind).play();
+    this.setState({
+      nowPlaying: drumSample.sample
+    });
+  }
+
   handleKeyPress(event) {    
     const key = event.key;
     const keyUpper = key.toUpperCase();
@@ -70,10 +77,7 @@ class App extends React.Component {
     
     if (keysToHandle.includes(keyUpper)) {
       const target = drumMap.find(({ keyBind }) => keyBind === keyUpper);
-      document.getElementById(target.keyBind).play();
-      this.setState({
-        nowPlaying: target.sample
-      });
+      this.playSample(target);
     }
   }
 
@@ -87,35 +91,35 @@ class App extends React.Component {
         </div>
         <div className='row'>
           <div className='col'>
-            <DrumPad sample='Heater-1' keyBind='Q' />
+            <DrumPad sample={drumMap[0].sample} keyBind={drumMap[0].keyBind} />
           </div>
           <div className='col'>
-            <DrumPad sample='Heater-2' keyBind='W' />
+            <DrumPad sample={drumMap[1].sample} keyBind={drumMap[1].keyBind} />
           </div>
           <div className='col'>
-            <DrumPad sample='Heater-3' keyBind='E' />
-          </div>
-        </div>
-        <div className='row'>
-          <div className='col'>
-            <DrumPad sample='Heater-4_1' keyBind='A' />
-          </div>
-          <div className='col'>
-            <DrumPad sample='Heater-6' keyBind='S' />
-          </div>
-          <div className='col'>
-            <DrumPad sample='Dsc_Oh' keyBind='D' />
+            <DrumPad sample={drumMap[2].sample} keyBind={drumMap[2].keyBind} />
           </div>
         </div>
         <div className='row'>
           <div className='col'>
-            <DrumPad sample='Kick_n_Hat' keyBind='Z' />
+            <DrumPad sample={drumMap[3].sample} keyBind={drumMap[3].keyBind} />
           </div>
           <div className='col'>
-            <DrumPad sample='RP4_KICK_1' keyBind='X' />
+            <DrumPad sample={drumMap[4].sample} keyBind={drumMap[4].keyBind} />
           </div>
           <div className='col'>
-            <DrumPad sample='Cev_H2' keyBind='C' />
+            <DrumPad sample={drumMap[5].sample} keyBind={drumMap[5].keyBind} />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col'>
+            <DrumPad sample={drumMap[6].sample} keyBind={drumMap[6].keyBind} />
+          </div>
+          <div className='col'>
+            <DrumPad sample={drumMap[7].sample} keyBind={drumMap[7].keyBind} />
+          </div>
+          <div className='col'>
+            <DrumPad sample={drumMap[8].sample} keyBind={drumMap[8].keyBind} />
           </div>
         </div>
       </div>          
