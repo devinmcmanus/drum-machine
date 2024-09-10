@@ -5,21 +5,21 @@ class DrumPad extends React.Component {
     constructor(props) {
         super(props);
 
-        this.audioSrc = `https://cdn.freecodecamp.org/testable-projects-fcc/audio/${this.props.sample}.mp3`;
+        this.audioSrc = `https://cdn.freecodecamp.org/testable-projects-fcc/audio/${this.props.drumMap.sample}.mp3`;
     }
 
     render() {
         return (
             <div>
                 <button 
-                    id={this.props.sample} 
+                    id={this.props.drumMap.sample} 
                     type='button' 
                     className='btn btn-secondary drum-pad'                    
                     onClick={this.props.onClick}
                 >
-                    {this.props.keyBind}
+                    {this.props.drumMap.keyBind}
                     <audio 
-                        id={this.props.keyBind} 
+                        id={this.props.drumMap.keyBind} 
                         className='clip' 
                         src={this.audioSrc} 
                     />
@@ -29,8 +29,7 @@ class DrumPad extends React.Component {
     }
 }
 DrumPad.propTypes = {
-    sample: PropTypes.string.isRequired,
-    keyBind: PropTypes.string.isRequired,
+    drumMap: PropTypes.object.isRequired,
     onClick: PropTypes.func.isRequired
 };
 

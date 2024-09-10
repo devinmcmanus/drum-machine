@@ -91,22 +91,19 @@ class App extends React.Component {
         <div className='row'>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[0].sample} 
-              keyBind={drumMap[0].keyBind} 
+              drumMap={drumMap[0]}
               onClick={() => this.playSample(drumMap[0])} 
             />
           </div>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[1].sample} 
-              keyBind={drumMap[1].keyBind} 
+              drumMap={drumMap[1]}
               onClick={() => this.playSample(drumMap[1])}
             />
           </div>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[2].sample} 
-              keyBind={drumMap[2].keyBind} 
+              drumMap={drumMap[2]}
               onClick={() => this.playSample(drumMap[2])}  
             />
           </div>
@@ -114,22 +111,19 @@ class App extends React.Component {
         <div className='row'>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[3].sample} 
-              keyBind={drumMap[3].keyBind} 
+              drumMap={drumMap[3]}
               onClick={() => this.playSample(drumMap[3])}
             />
           </div>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[4].sample} 
-              keyBind={drumMap[4].keyBind} 
+              drumMap={drumMap[4]}
               onClick={() => this.playSample(drumMap[4])}
             />
           </div>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[5].sample} 
-              keyBind={drumMap[5].keyBind} 
+              drumMap={drumMap[5]}
               onClick={() => this.playSample(drumMap[5])}
             />
           </div>
@@ -137,22 +131,19 @@ class App extends React.Component {
         <div className='row'>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[6].sample} 
-              keyBind={drumMap[6].keyBind} 
+              drumMap={drumMap[6]}
               onClick={() => this.playSample(drumMap[6])}
             />
           </div>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[7].sample} 
-              keyBind={drumMap[7].keyBind} 
+              drumMap={drumMap[7]}
               onClick={() => this.playSample(drumMap[7])}
             />
           </div>
           <div className='col'>
             <DrumPad 
-              sample={drumMap[8].sample} 
-              keyBind={drumMap[8].keyBind} 
+              drumMap={drumMap[8]}
               onClick={() => this.playSample(drumMap[8])}
             />
           </div>
