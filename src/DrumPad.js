@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './DrumPad.css';
 
 class DrumPad extends React.Component {
     constructor(props) {
@@ -10,14 +11,16 @@ class DrumPad extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='p-2'>
                 <button 
                     id={this.props.drumMap.sample} 
                     type='button' 
                     className='btn btn-secondary drum-pad'                    
                     onClick={this.props.onClick}
                 >
-                    {this.props.drumMap.keyBind}
+                    <span className='display-1'>
+                        {this.props.drumMap.keyBind}
+                    </span>
                     <audio 
                         id={this.props.drumMap.keyBind} 
                         className='clip' 
